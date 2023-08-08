@@ -1,0 +1,113 @@
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+body{
+    background-image: url("Login.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      overflow: hidden;
+      padding: 15px;
+
+    }
+
+    .navbar a {
+      float: left;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      transition: background-color 0.3s;
+      margin-right: 30px;
+    }
+
+    .navbar a:hover {
+      background-color: #45a049;
+      font-size: 19px;
+    }
+
+   
+    .navbar a.active:hover {
+     background-color: #0000F7;
+     font-size: 20px;
+    }
+
+    .navbar .nav-link {
+      background-color: transparent;
+    }
+
+    .navbar .nav-link:hover {
+  background-color: #0000F7;
+    }
+
+    .navbar .nav-link.active {
+      background-color: transparent;
+    }
+
+/* Student Login form styles */
+.student_login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120vh;
+
+}
+
+.login-form1 {
+  background-color: gold;
+  border-radius: 5px;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+ height: 300px;
+  width: 100%;
+}
+
+.login-form1 h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-form1 input {
+  width: 100%;
+   padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.login-form1 button {
+  width: 100%;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.login-form1 button:hover {
+  background-color: #45a049;
+}
+
+.login-form1 p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.login-form1 a {
+  color: #4CAF50;
+  text-decoration: none;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="registration.css">
+
+  <title>Signup</title>
+</head>
+<body>
+   <!-- navigation -->
+  <div class="navbar">
+    <a href="home.html" class="active">Home</a>
+    <a href="book.html" class="nav-link">Book</a>
+    <a href="student_login.html" class="nav-link">Student Login</a>
+    <a href="#" class="nav-link">Admin Login</a>
+    <a href="#" class="nav-link">Feedback List</a>
+  </div>
+  <!-- this is signup-page -->
+   
+    <form class="signup-form" method="post" action="signup.php"><br><br><br>
+     <span> <h2 style="font-size: 30px;">Rolpa Polytechnic Institute
+      <br>Student Signup</h2></span>
+      <div class="form-group">
+        <label for="image"><i class="fas fa-image"></i> Student Image:</label>
+        <input type="file" id="image" accept="image/*" required>
+      </div>
+      <div class="form-group">
+        <label for="name"><i class="fas fa-user"></i> Name:</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="father_name"><i class="fas fa-user"></i> Father's Name:</label>
+        <input type="text" id="father_name" required>
+      </div>
+      <div class="form-group">
+        <label for="mother_name"><i class="fas fa-user"></i> Mother's Name:</label>
+        <input type="text" id="mother_name" required>
+      </div>
+      <div class="form-group">
+        <label for="gender"><i class="fas fa-venus-mars"></i> Gender:</label>
+          <input type="radio" name="gender">Male
+                  <input type="radio" name="gender">Female
+                        <input type="radio" name="gender">Other
+      </div>
+      <div class="form-group">
+        <label for="dob"><i class="fas fa-calendar-alt"></i> Date of Birth:</label>
+        <input type="date" id="dob" required>
+      </div>
+      <div class="form-group">
+        <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+        <input type="email" id="email" required>
+      </div>
+    
+      <div class="form-group">
+        <label for="department"><i class="fas fa-building"></i> Department:</label>
+        <select id="department" required>
+          <option value="">Select Department</option>
+          <option value="Information Technology">Information Technology</option>
+          <option value="Animal Science">Animal Science</option>
+          <option value="Agriculture Science">Agriculture Science</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+     <div class="form-group">
+  <label for="level"><i class="fas fa-graduation-cap"></i> Level:</label>
+  <select id="level" required>
+    <option value="">Select Department First</option>
+  </select>
+</div>
+
+      <div class="form-group">
+        <label for="mobile"><i class="fas fa-mobile-alt"></i> Mobile Number:</label>
+        <input type="tel" id="mobile" required>
+      </div>
+      <button type="submit">Signup</button>
+       <p>for login <a href="student_login.html" >Login</a></p>
+    </form>
+  </div>
+</body>
+</html>
+<script>
+  const levelSelect = document.getElementById('level');
+  const departmentSelect = document.getElementById('department');
+
+  departmentSelect.addEventListener('change', function () {
+    const selectedDepartment = departmentSelect.value;
+    levelSelect.innerHTML = '';
+
+    if (selectedDepartment === 'Agriculture Science' || selectedDepartment === 'Animal Science') {
+      addLevelOption('Select Level');
+      addLevelOption('I/I');
+      addLevelOption('II/I');
+      addLevelOption('III');
+    } else if (selectedDepartment === 'Information Technology') {
+      addLevelOption('Select Level');
+      addLevelOption('I/I');
+      addLevelOption('II/I');
+      addLevelOption('III/I');
+    } else {
+      // Default option when no department is selected or unknown department
+      addLevelOption('Select Department First', true);
+    }
+  });
+
+  function addLevelOption(value, selected = false) {
+    const option = document.createElement('option');
+    option.value = value;
+    option.innerText = value;
+    if (selected) {
+      option.selected = true;
+    }
+    levelSelect.appendChild(option);
+  }
+</script>

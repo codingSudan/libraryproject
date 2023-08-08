@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>pop</title>
+<style>
+  .image-slider {
+    width: 100%; /* Adjust the width as desired */
+    height: 400px; /* Adjust the height as desired */
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .image-slider-inner {
+    display: flex;
+    width: 400%; /* Adjusted width to accommodate four images */
+    animation: slide 10s infinite;
+  }
+  
+  .image-slider-item {
+    flex: 25%;
+    transition: transform 0.5s;
+    position: relative;
+  }
+  
+  .image-slider-item img {
+    width: 100%;
+    height: 350%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  
+  .marquee-container {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    overflow: hidden;
+  }
+  
+  .marquee-content {
+    display: inline-block;
+    animation: marquee 10s linear infinite;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>
+
+<div class="image-slider">
+  <div class="image-slider-inner">
+    <div class="image-slider-item">
+      <img src="ItDepartment.jpg" alt="Image 1" width="100%" height="350px">
+    </div>
+    <div class="image-slider-item">
+      <img src="AgricultureDepartment.jpg" alt="Image 2">
+    </div>
+    <div class="image-slider-item">
+      <img src="AnimalDepartment.jpg" alt="Image 3">
+    </div>
+   </div>
+  
+  <div class="prev" onclick="prevImage()">&#8249;</div>
+  <div class="next" onclick="nextImage()">&#8250;</div>
+  
+  <div class="marquee-container">
+    <div class="marquee-content">
+      <span class="image-name">Software Engineering</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  var currentImageIndex = 0;
+  var imageNames = [
+    "Software Engineering",
+    "Java Programming",
+    "Visual Programming",
+   
+  ];
+  var slideInterval;
+
+  function startSlideShow() {
+    slideInterval = setInterval(nextImage, 5000); // Change image every 5 seconds
+  }
+
+  function stopSlideShow() {
+    clearInterval(slideInterval);
+  }
+
+  function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + imageNames.length) % imageNames.length;
+    updateSlider();
+  }
+
+  function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % imageNames.length;
+    updateSlider();
+  }
+
+  function updateSlider() {
+    var slider = document.querySelector(".image-slider-inner");
+    var imageWidth = document.querySelector(".image-slider-item").clientWidth;
+    var translateValue = -currentImageIndex * imageWidth;
+    slider.style.transform = "translateX(" + translateValue + "px)";
+
+    var marqueeContent = document.querySelector(".marquee-content");
+    marqueeContent.innerHTML = '<span class="image-name">' + imageNames[currentImageIndex] + '</span>';
+  }
+
+  // Start the slideshow when the page loads
+  window.addEventListener("load", startSlideShow);
+</script>
+
+
+
+</body>
+</html>

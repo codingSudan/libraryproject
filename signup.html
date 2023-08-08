@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Signup Form</title>
+  <link rel="stylesheet" href="signup.css">
+   <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="student_login.css">
+  <title>Student Login</title>
+</head>
+
+
+<body>
+  <!-- navigation -->
+  <div class="navbar">
+    <a href="index.html" class="active">Home</a>
+    <a href="book.html" class="nav-link">Book</a>
+    <a href="student_login.html" class="nav-link">Login</a>
+    <a href="#" class="nav-link">Logout</a>
+    <a href="#" class="nav-link">Feedback List</a>
+  </div>
+
+
+
+
+  <!-- this is for signup form -->
+  <div class="container">
+    <h2>Sign Up</h2>
+        
+    <form id="signup-form" method="post" action="process_signup.php">
+      <label for="name">Id:</label>
+      <input type="text" id="name" name="id" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Sign Up</button>
+    </form>
+    <p id="message"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+

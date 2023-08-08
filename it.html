@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+	  <link rel="stylesheet" type="text/css" href="it.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Information Technology</title>
+</head>
+<body>
+	<!-- this is navigation bar -->
+
+	<div class="navbar">
+    <a href="home.html" class="active">Home</a>
+    <a href="book.html" class="nav-link">Book</a>
+    <a href="#" class="nav-link">Student Login</a>
+    <a href="#" class="nav-link">Admin Login</a>
+    <a href="#" class="nav-link">Feedback List</a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+         <input type="text" id="searchInput" placeholder="Search for a book" onkeydown="handleSearch(event)" style="width: 300px; height: 50px; ">
+            <button onclick="searchBooks()" style="padding: 17px; background-color: darkblue; color: white;">Search</button>
+  </div>
+<!-- this is for main part -->
+<div class="home-content">
+    <h1>Welcome to the Information technology faculty</h1>
+    <p>Manage your library with ease and efficiency.</p>
+
+
+
+
+
+<div class="search-container">
+       
+      </div>
+
+
+  <!-- Book cards -->
+  <div class="book-list">
+  <div class="book-card">
+    <img src="software.png" alt="Software" height="150px">
+    <h2>Java Engineering</h2>
+      <button class="btn-view-details">View Details</button>
+    <button class="btn-request-book">Request Book</button>
+  </div>
+
+  <div class="book-card">
+    <img src="data.jpg" alt="Software" height="150px">
+    <h2>Software Engineering</h2>
+      <button class="btn-view-details">View Details</button>
+    <button class="btn-request-book">Request Book</button>
+  </div>
+
+  <div class="book-card">
+    <img src="software.png" alt="Software" height="150px">
+    <h2>Java Programming</h2>
+      <button class="btn-view-details">View Details</button>
+    <button class="btn-request-book">Request Book</button>
+  </div>
+</div>
+
+
+<div class="book-list">
+  <div class="book-card">
+    <img src="software.png" alt="Software" height="150px">
+    <h2>Software Engineering</h2>
+      <button class="btn-view-details">View Details</button>
+    <button class="btn-request-book">Request Book</button>
+  </div>
+
+  <div class="book-card">
+    <img src="software.png" alt="Software" height="150px">
+    <h2>Mathematics Engineering</h2>
+      <button class="btn-view-details">View Details</button>
+    <button class="btn-request-book">Request Book</button>
+  </div>
+
+  <div class="book-card">
+    <img src="software.png" alt="Software" height="150px">
+    <h2>Software Engineering</h2>
+      <button class="btn-view-details">View Details</button>
+    <button class="btn-request-book">Request Book</button>
+  </div>
+
+</div>
+
+
+<div class="book-list">
+  <div class="book-card">
+    <img src="book.jpg" alt="Software" height="150px">
+    <h2>Nepali</h2>
+      <button class="btn-view-details">View Details</button>
+    <button class="btn-request-book">Request Book</button>
+  </div>
+
+  <div class="book-card">
+    <img src="book.jpg" alt="Software" height="150px">
+    <h2>CSS</h2>
+      <button class="btn-view-details">View Details</button>
+    <button class="btn-request-book">Request Book</button>
+  </div>
+
+  <div class="book-card">
+    <img src="software.png" alt="Software" height="150px">
+    <h2>Software Engineering</h2>
+      <button class="btn-view-details">View Details</button>
+    <button class="btn-request-book">Request Book</button>
+  </div>
+
+</div>
+
+
+<div class="book-list">
+  <div class="book-card">
+    <img src="book1.jpg" alt="Software" height="150px">
+    <h2>HTML</h2>
+      <button class="btn-view-details">View Details</button>
+    <button class="btn-request-book">Request Book</button>
+  </div>
+
+  <div class="book-card">
+    <img src="book3.jpg" alt="Software" height="150px">
+    <h2>CSS</h2>
+      <button class="btn-view-details">View Details</button>
+    <button class="btn-request-book">Request Book</button>
+  </div>
+
+  <div class="book-card">
+    <img src="book4.jpg" alt="Software" height="150px">
+    <h2>JavaScript</h2>
+      <button class="btn-view-details">View Details</button>
+    <button class="btn-request-book">Request Book</button>
+  </div>
+
+  <div class="book-card">
+    <img src="computer engineering.jpg" alt="Software" height="150px">
+    <h2>Computer Application</h2>
+      <button class="btn-view-details">View Details</button>
+    <button class="btn-request-book">Request Book</button>
+  </div>
+</div>
+
+<!-- this is for book details popup -->
+<div id="details-popup" class="popup-container">
+  <div class="popup-content">
+    <span class="close-icon">&times;</span>
+    <h2>Book Details</h2>
+    <div class="book-details">
+      <!-- Book details content goes here -->
+      <p>Book Name: Book 1</p>
+      <p>Author: Author 1</p>
+      <p>Genre: Genre 1</p>
+      <p>Description: Some description of the book.
+    </div>
+  </div>
+</div>
+<!-- this is request book popup -->
+<div id="request-popup" class="popup-container">
+  <div class="popup-content">
+    <span class="close-icon">&times;</span>
+    <h2>Request Book</h2>
+    <form id="request-form">
+      <!-- Request book form fields go here -->
+      <input type="text" name="fullname" placeholder="Full Name" required>
+      <input type="number" name="number" placeholder="Enter your Roll No">
+      <input type="text" name="bookname" placeholder="Book Name" required>
+      <input type="number" name="quantity" placeholder="Number of Copies" required>
+
+      <input type="submit" value="Submit Request">
+    </form>
+  </div>
+</div>
+
+
+
+
+
+     
+<!-- this is footer section  -->
+  <footer>
+   
+      <h2 class="FirstFooter">You can find us at</h2>
+      <ul class="social-icons">
+
+    <li><a href="https://www.youtube.com/@hemrajkhatri123"><i class="fab fa-youtube"></i></a></li>
+    <li><a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a></li>
+    <li><a href="https://www.facebook.com/hemraj.khatri404"><i class="fab fa-linkedin"></i></a></li>
+  </ul>
+
+    <hr>
+    <div class="footer-container">
+    <div class="footer-content">
+    
+      <ul class="footer-links">
+        <li><h2><a href="#">Product</a></h2></li>
+        <li><a href="#">Createe Websites</a></li>
+        <li><a href="#">Secure Cloud Hosting</a></li>
+        <li><a href="#">Engage Your Audience</a></li>
+        <li><a href="#">Website Support</a></li>
+      </ul>
+
+         <ul class="footer-links">
+        <li><h2><a href="#">Product</a></h2></li>
+        <li><a href="#">Createe Websites</a></li>
+        <li><a href="#">Secure Cloud Hosting</a></li>
+        <li><a href="#">Engage Your Audience</a></li>
+        <li><a href="#">Website Support</a></li>
+      </ul>
+
+         <ul class="footer-links">
+        <li><h2><a href="#">Product</a></h2></li>
+        <li><a href="#">Createe Websites</a></li>
+        <li><a href="#">Secure Cloud Hosting</a></li>
+        <li><a href="#">Engage Your Audience</a></li>
+        <li><a href="#">Website Support</a></li>
+      </ul>
+
+
+      <ul class="footer-links">
+        <li><h2><a href="#">Product</a></h2></li>
+        <li><a href="#">Createe Websites</a></li>
+        <li><a href="#">Secure Cloud Hosting</a></li>
+        <li><a href="#">Engage Your Audience</a></li>
+        <li><a href="#">Website Support</a></li>
+      </ul>
+    </div>
+     </div>
+     <hr>
+       <marquee> <p class="copyright">&copy; 2023 Library Management System. All rights reserved.</p></marquee>
+   </footer>
+
+</body>
+</html>
+
+
+
+
+<script type="text/javascript">
+const viewDetailsButtons = document.querySelectorAll(".btn-view-details");
+const requestBookButtons = document.querySelectorAll(".btn-request-book");
+const detailsPopup = document.getElementById("details-popup");
+const requestPopup = document.getElementById("request-popup");
+const closeIcons = document.querySelectorAll(".close-icon");
+
+viewDetailsButtons.forEach(function(button) {
+  button.addEventListener("click", function() {
+    detailsPopup.style.display = "block";
+    // Populate the book details in the details popup
+    const bookDetailsContainer = detailsPopup.querySelector(".book-details");
+    // Update the content of bookDetailsContainer with the book details
+    // Example:
+    // bookDetailsContainer.innerHTML = `
+    //   <p>Book Name: Book 1</p>
+    //   <p>Author: Author 1</p>
+    //   <p>Genre: Genre 1</p>
+    //   <p>Description: Some description of the book.</p>
+    //   <!-- Add more details as needed -->
+    // `;
+  });
+});
+
+requestBookButtons.forEach(function(button) {
+  button.addEventListener("click", function() {
+    requestPopup.style.display = "block";
+  });
+});
+
+closeIcons.forEach(function(icon) {
+  icon.addEventListener("click", function() {
+    detailsPopup.style.display = "none";
+    requestPopup.style.display = "none";
+  });
+});
+
+detailsPopup.addEventListener("click", function(event) {
+  if (event.target === detailsPopup) {
+    event.stopPropagation();
+  }
+});
+
+requestPopup.addEventListener("click", function(event) {
+  if (event.target === requestPopup) {
+    event.stopPropagation();
+  }
+});
+
+
+
+
+// this is for book search bar
+ function handleSearch(event) {
+    if (event.keyCode === 13) {
+      searchBooks();
+    }
+  }
+
+  function searchBooks() {
+    var searchInput = document.getElementById("searchInput");
+    var searchTerm = searchInput.value.toLowerCase();
+    var bookCards = document.getElementsByClassName("book-card");
+
+    for (var i = 0; i < bookCards.length; i++) {
+      var bookTitle = bookCards[i].getElementsByTagName("h2")[0].textContent.toLowerCase();
+      var displayStyle = bookTitle.includes(searchTerm) ? "block" : "none";
+      bookCards[i].style.display = displayStyle;
+    }
+  }
+
+</script>
